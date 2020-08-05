@@ -1,0 +1,11 @@
+<apex:page >
+    <apex:pageBlock title="User Details">
+    <apex:pageBlockSection >
+        <apex:outputText value="Full name: {! $User.FirstName}  {! $User.LastName }"/>
+        <apex:outputText value="Phone: {! $User.Phone }"/>
+        <apex:outputText value="Email: {! $User.Email }"/>
+        <apex:outputText value="Address: {! $User.Address }"/>
+        <apex:outputText value="Balance: {! $User.Balance__c }"/>
+    </apex:pageBlockSection>
+</apex:pageBlock>
+</apex:page>

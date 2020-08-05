@@ -1,0 +1,23 @@
+<apex:page controller="TransactionController">
+    <apex:form >
+        <apex:pageBlock title="TransactionData">
+            <apex:outputPanel id="requiredPanel">
+            <apex:pageBlockTable value="{!Transactions}" var="tr">
+                <apex:column value="{!tr.name}"/>
+                <apex:column value="{!tr.amount__c}"/>
+                <apex:column value="{!tr.createdDate}"/>
+                <apex:column >
+                    <apex:commandLink value="Edit" action="{!editTransaction}">
+                        <apex:param name="editTransaction" value="{!tr.Id}"></apex:param>
+                    </apex:commandLink>
+                </apex:column>
+                <apex:column >
+                    <apex:commandLink value="Del" action="{!removeTransaction}" immediate="true" reRender="requiredPanel">
+                        <apex:param name="delTransaction" value="{!tr.Id}"></apex:param>
+                    </apex:commandLink>
+                </apex:column>
+            </apex:pageBlockTable>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
